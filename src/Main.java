@@ -29,5 +29,14 @@ public class Main {
             this.y = (int) (Math.random() * 100);
         }
 
+        //check if the current object is equal to the given object o based on the x and y attributes.
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            MyTestingClass that = (MyTestingClass) o;
+            return x == that.x && y == that.y;
+        }
+    }
     }
 
