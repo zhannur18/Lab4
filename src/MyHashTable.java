@@ -18,8 +18,15 @@ public class MyHashTable<K, V> {
     private HashNode<K, V>[] chainArray;
     private int M = 11;
     private int size;
+    //creating hash tables with default or specified capacity.
     public MyHashTable() {
         chainArray = new HashNode[M];
     }
+
+    public MyHashTable(int M) {
+        this.M = M;
+        chainArray = new HashNode[M];
+    }
+
 
 }
