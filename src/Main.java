@@ -19,6 +19,15 @@ public class Main {
     private static class Test {
         // Test class for testing purposes
     }
+    private static class MyTestingClass {
+        // Example class for testing purposes
+        private int x;
+        private int y;
+
+        public MyTestingClass() {
+            this.x = (int) (Math.random() * 100);
+            this.y = (int) (Math.random() * 100);
+        }
 
     }
 
