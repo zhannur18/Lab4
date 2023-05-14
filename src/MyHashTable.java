@@ -72,6 +72,29 @@ public void put(K key, V value) {
         // If the key is not found, return null.
         return null;
     }
+    public V remove(K key) { //removes a key-value pair from the hash table based on a given key
+        int index = hash(key);
+        HashNode<K, V> current = chainArray[index];
+        // Keep track of the previous node as we iterate through the list
+        HashNode<K, V> prev = null;
+        while (current != null) {
+            if (current.key.equals(key)) {
+                // If this is the head node, update the head of the linked list
+                if (prev == null) {
+                    chainArray[index] = current.next;
+                } else {
+                    prev.next = current.next;
+                }
+                size--;
+                // Return the value of the removed node
+                return current.value;
+            }
+            // Update the previous and current pointers
+            prev = current;
+            current = current.next;
+        }
+        return null;
+    }
 
 
 }
