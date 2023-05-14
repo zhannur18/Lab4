@@ -19,6 +19,7 @@ public class Main {
     private static class Test {
         // Test class for testing purposes
     }
+
     private static class MyTestingClass {
         // Example class for testing purposes
         private int x;
@@ -37,6 +38,13 @@ public class Main {
             MyTestingClass that = (MyTestingClass) o;
             return x == that.x && y == that.y;
         }
+    @Override
+    public int hashCode() {
+        // Custom hashCode implementation to improve distribution
+        int result = 17;
+        result = 31 * result + x;
+        result = 31 * result + y;
+        return result;
     }
-    }
+}}
 
