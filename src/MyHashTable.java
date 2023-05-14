@@ -58,6 +58,20 @@ public void put(K key, V value) {
     }
     size++;
 }
+    // public method to retrieve a value from the hash table by its key.
+    public V get(K key) {
+        int index = hash(key);
+        HashNode<K, V> current = chainArray[index];
+        while (current != null) {
+            if (current.key.equals(key)) {
+                // If the key is found, return the corresponding value.
+                return current.value;
+            }
+            current = current.next;
+        }
+        // If the key is not found, return null.
+        return null;
+    }
 
 
 }
