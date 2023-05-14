@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +14,15 @@ public class Main {
 
         // Printing the number of elements in each bucket
         table.printBucketSizes();
-
     }
-
+    @Override
+    public int hashCode() {
+        Objects Objects = null;
+        Object y;
+        y = null;
+        Object x = null;
+        return Objects.hash(x, y);
+    }
     private static class Test {
         // Test class for testing purposes
     }
