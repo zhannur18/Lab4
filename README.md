@@ -1,0 +1,10 @@
+# Lab4
+The main method creates an instance of a custom hash table called "MyHashTable" with Object keys and Object values. It then adds 10000 randomly generated key-value pairs to the hash table, and prints the number of elements in each bucket using the "printBucketSizes" method of the hash table. Finally, the code suggests tuning the hashCode method in a custom class called "MyTestingClass" to improve distribution, which is left as an exercise for the reader.
+
+The code includes comments that provide some explanation of what is happening at each step. However, the comments could be improved to be more clear and concise.Additionally, the comment that suggests tuning the hashCode method could provide more guidance on how to do so, or refer the reader to relevant resources.
+
+MyHashTable class. The code is implementing a hash table data structure. It uses a hash function to map keys to indices in an array, and it stores key-value pairs as nodes in linked lists at those indices.
+
+The class  has two type parameters,  and , which represent the types of keys and values that the hash table can store. The class has two constructors: one that creates a hash table with default size 11 and another that allows the user to specify the size of the hash table.MyHashTableKV
+
+The class also has several methods for manipulating the hash table. The  method takes a key-value pair and adds it to the hash table, replacing any existing value for the same key. The  method takes a key and returns the corresponding value, or null if the key is not found. The  method takes a key and removes the corresponding key-value pair from the hash table, returning the value or null if the key is not found. The  method takes a value and returns true if the value is present in any key-value pair in the hash table. The  method takes a value and returns the key for the corresponding key-value pair in the hash table, or null if the value is not found. Finally, the  method prints the number of key-value pairs in each linked list (or "bucket") in the hash table.putgetremovecontainsgetKeyprintBucketSizes.
