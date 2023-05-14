@@ -125,5 +125,21 @@ public void put(K key, V value) {
         }
         return null;
     }
+    public void printBucketSizes() {
+        // an array to store the size of each linked list in the hash table
+        int[] bucketSizes = new int[M];
+        for (int i = 0; i < M; i++) {
+            HashNode<K, V> current = chainArray[i];
+            // Iterate through each node in the linked list and increment the size of this bucket
+            while (current != null) {
+                bucketSizes[i]++;
+                current = current.next;
+            }
+        }
+        // Print out the size of each bucket in the hash table
+        for (int i = 0; i < M; i++) {
+            System.out.println("Bucket " + i + ": " + bucketSizes[i]);
+        }
+    }
 
-}
+    }
