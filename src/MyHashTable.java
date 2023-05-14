@@ -27,6 +27,9 @@ public class MyHashTable<K, V> {
         this.M = M;
         chainArray = new HashNode[M];
     }
+    private int hash(K key) {//private hash function to map keys to an index in the hash table array
+        return Math.abs(key.hashCode()) % M;
+    }
 
 
 }
