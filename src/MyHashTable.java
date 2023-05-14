@@ -1,3 +1,4 @@
+import java.util.Objects;
 public class MyHashTable<K, V> {
     private class HashNode<K, V> {
         private K key;
@@ -96,5 +97,19 @@ public void put(K key, V value) {
         return null;
     }
 
+    public boolean contains(V value) {//returns true if the hash table contains a given value
+    for (int i = 0; i < M; i++) {
+        HashNode<K, V> current = chainArray[i];
+        while (current != null) {
+            // If the value of this node matches the target value, return true
+            if (Objects.equals(current.value, value)) {
+                return true;
+            }
+            // Move to the next node in the linked list
+            current = current.next;
+        }
+    }
+    return false;
+}
 
 }
