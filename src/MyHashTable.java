@@ -111,5 +111,19 @@ public void put(K key, V value) {
     }
     return false;
 }
+    public K getKey(V value) {//returns the key of the node with the given value
+        // Iterate through each linked list in the hash table
+        for (int i = 0; i < M; i++) {
+            HashNode<K, V> current = chainArray[i];
+            while (current != null) {
+                // If the value of this node matches the target value, return the key
+                if (Objects.equals(current.value, value)) {
+                    return current.key;
+                }
+                current = current.next;
+            }
+        }
+        return null;
+    }
 
 }
