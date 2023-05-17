@@ -1,3 +1,6 @@
+import org.w3c.dom.Node;
+
+import java.util.HashMap;
 import java.util.Objects;
 public class MyHashTable<K, V> {
     private class HashNode<K, V> {
@@ -140,6 +143,19 @@ public void put(K key, V value) {
         for (int i = 0; i < M; i++) {
             System.out.println("Bucket " + i + ": " + bucketSizes[i]);
         }
+    }
+    public boolean containKey(K key) {
+        int i = hash(key);
+        if (chainArray[i] != null) {
+            HashNode<K, V> currentNode = chainArray[i];
+            while (currentNode != null) {
+                if (currentNode.key.equals(key)) {
+                    return true;
+                }
+                currentNode = currentNode.next;
+            }
+        }
+        return false;
     }
 
     }
