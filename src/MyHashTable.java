@@ -144,6 +144,7 @@ public void put(K key, V value) {
             System.out.println("Bucket " + i + ": " + bucketSizes[i]);
         }
     }
+
     public boolean containKey(K key) {
         int i = hash(key);
         if (chainArray[i] != null) {
